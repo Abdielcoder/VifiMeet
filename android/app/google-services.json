@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "832922884293",
+    "project_id": "vifi-meet",
+    "storage_bucket": "vifi-meet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832922884293:android:01db71b442fb06580df8ac",
+        "android_client_info": {
+          "package_name": "com.example.vifi_meet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832922884293-an3indit5mtcn1pbvug9qalph0p2jlkm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFy8lEgg0VUy02L_Sh-VS2hrViOD4paRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832922884293-an3indit5mtcn1pbvug9qalph0p2jlkm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
