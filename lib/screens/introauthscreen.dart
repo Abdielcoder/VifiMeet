@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:vifi_meet/authentication/navigateauthscreen.dart';
 import 'package:vifi_meet/variables.dart';
 
 class IntroAuthScreen extends StatefulWidget {
@@ -46,14 +47,15 @@ class _IntroAuthScreenState extends State<IntroAuthScreen> {
         )
       ],
       onDone: () {
-        print("Done");
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => NavigateAuthScreen()));
       },
       onSkip: () {},
       showSkipButton: true,
       skip: const Icon(Icons.skip_next, size: 45),
       next: const Icon(Icons.arrow_forward_ios),
       done: Text(
-        "Done",
+        "OK",
         style: mystyle(20, Colors.black),
       ),
     );
