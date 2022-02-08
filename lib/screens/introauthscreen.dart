@@ -16,7 +16,7 @@ class _IntroAuthScreenState extends State<IntroAuthScreen> {
         PageViewModel(
             title: "Bienvenido",
             body:
-                "Bienvenido a VIFI ZOOM la mejor plataforma de video conferencia empresarial",
+                "Bienvenido a VIFI la mejor plataforma de videoconferencia empresarial",
             image: Center(
               child: Image.asset('images/welcome.png', height: 175),
             ),
@@ -24,9 +24,9 @@ class _IntroAuthScreenState extends State<IntroAuthScreen> {
                 bodyTextStyle: mystyle(20, Colors.black),
                 titleTextStyle: mystyle(20, Colors.black))),
         PageViewModel(
-            title: "Unete o empieza una Reunión",
+            title: "Únete o empieza una Reunión",
             body:
-                "Una app facil de usar y potente, unete o empieza una reunion de manera rapida",
+                "Una app fácil de usar y potente, que esperas empieza una reunión de manera rápida",
             image: Center(
               child: Image.asset('images/conference.png', height: 175),
             ),
@@ -36,9 +36,9 @@ class _IntroAuthScreenState extends State<IntroAuthScreen> {
         PageViewModel(
           title: "Seguridad",
           body:
-              "Tu seguirdad es importante para nosotros, nuestros servidores son seguros y están encriptados ",
+              "Tu seguridad es importante para nosotros, nuestros servidores son seguros y están encriptados",
           image: Center(
-            child: Image.asset('images/secure.jpg', height: 175),
+            child: Image.asset('images/secure.png', height: 175),
           ),
           decoration: PageDecoration(
             bodyTextStyle: mystyle(20, Colors.black),

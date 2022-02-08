@@ -21,7 +21,8 @@ class _NavigateAuthScreenState extends State<NavigateAuthScreen> {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height / 2,
               decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: GradientColors.blue)),
+                  gradient:
+                      LinearGradient(colors: GradientColors.beautifulGreen)),
               child: Center(
                 child: Image.asset(
                   'images/logo.png',
