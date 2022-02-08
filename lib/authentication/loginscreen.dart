@@ -87,10 +87,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       InkWell(
                         onTap: () {
                           try {
+                            int count = 0;
                             FirebaseAuth.instance.signInWithEmailAndPassword(
                                 email: emailcontroller.text,
                                 password: passwordcontroller.text);
-                            Navigator.pop(context);
+                            Navigator.popUntil(context, (route) {
+                              return count++ == 2;
+                            });
                           } catch (e) {
                             var snackbar = SnackBar(
                                 content:
