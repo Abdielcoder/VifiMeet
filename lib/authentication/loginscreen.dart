@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gradient_colors/flutter_gradient_colors.dart';
-import 'package:vifi_meet/authentication/loginscreen.dart';
-import 'package:vifi_meet/authentication/registerscreen.dart';
-import 'package:vifi_meet/variables.dart';
 
-class NavigateAuthScreen extends StatefulWidget {
+import '../variables.dart';
+
+class LoginScreen extends StatefulWidget {
   @override
-  _NavigateAuthScreenState createState() => _NavigateAuthScreenState();
+  _LoginScreenState createState() => _LoginScreenState();
 }
 
-// PAGE AFTER WELCOME SCREENS
-class _NavigateAuthScreenState extends State<NavigateAuthScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,11 +49,38 @@ class _NavigateAuthScreenState extends State<NavigateAuthScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      SizedBox(
+                        height: 50,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width / 1.7,
+                        child: TextField(
+                          style: mystyle(18, Colors.black),
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                              hintText: "Correo",
+                              prefixIcon: Icon(Icons.email),
+                              hintStyle:
+                                  mystyle(20, Colors.grey, FontWeight.w700)),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Container(
+                        width: MediaQuery.of(context).size.width / 1.7,
+                        child: TextField(
+                          style: mystyle(18, Colors.black),
+                          decoration: InputDecoration(
+                              hintText: "Contraseña",
+                              prefixIcon: Icon(Icons.lock),
+                              hintStyle:
+                                  mystyle(20, Colors.grey, FontWeight.w700)),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
                       InkWell(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => RegisterScreen())),
+                        onTap: () {},
                         child: Container(
                           width: MediaQuery.of(context).size.width / 2,
                           height: 60,
@@ -65,35 +90,12 @@ class _NavigateAuthScreenState extends State<NavigateAuthScreen> {
                               borderRadius: BorderRadius.circular(20)),
                           child: Center(
                             child: Text(
-                              "Registrar",
-                              style: mystyle(30, Colors.white),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 40,
-                      ),
-                      InkWell(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginScreen())),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width / 2,
-                          height: 60,
-                          decoration: BoxDecoration(
-                              gradient:
-                                  LinearGradient(colors: GradientColors.mojito),
-                              borderRadius: BorderRadius.circular(20)),
-                          child: Center(
-                            child: Text(
                               "Ingresar",
                               style: mystyle(30, Colors.white),
                             ),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   )),
             )
