@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:vifi_meet/screens/profilescreen.dart';
+import 'package:vifi_meet/screens/videoconferencescreen.dart';
 import 'package:vifi_meet/variables.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,10 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int page = 0;
-  List pageoptions = [
-    videoConferenceScreen(),
-    ProfileScreen(),
-  ]
+  List pageoptions = [VideoConferenceScreen(), ProfileScreen()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,11 +36,7 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.person, size: 32), label: 'perfil'),
         ],
       ),
-      body: InkWell(
-        onTap: () {
-          FirebaseAuth.instance.signOut();
-        },
-      ),
+      body: pageoptions[page],
     );
   }
 }
