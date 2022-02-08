@@ -57,8 +57,8 @@ class _NavigateAuthScreenState extends State<NavigateAuthScreen> {
                             MaterialPageRoute(
                                 builder: (context) => RegisterScreen())),
                         child: Container(
-                          width: MediaQuery.of(context).size.width / 2,
-                          height: 60,
+                          width: MediaQuery.of(context).size.width / 1.5,
+                          height: 50,
                           decoration: BoxDecoration(
                               gradient: LinearGradient(
                                   colors: GradientColors.riverCity),
@@ -66,7 +66,7 @@ class _NavigateAuthScreenState extends State<NavigateAuthScreen> {
                           child: Center(
                             child: Text(
                               "Registrar",
-                              style: mystyle(30, Colors.white),
+                              style: mystyle(20, Colors.white),
                             ),
                           ),
                         ),
@@ -80,8 +80,8 @@ class _NavigateAuthScreenState extends State<NavigateAuthScreen> {
                             MaterialPageRoute(
                                 builder: (context) => LoginScreen())),
                         child: Container(
-                          width: MediaQuery.of(context).size.width / 2,
-                          height: 60,
+                          width: MediaQuery.of(context).size.width / 1.5,
+                          height: 50,
                           decoration: BoxDecoration(
                               gradient:
                                   LinearGradient(colors: GradientColors.mojito),
@@ -89,7 +89,7 @@ class _NavigateAuthScreenState extends State<NavigateAuthScreen> {
                           child: Center(
                             child: Text(
                               "Ingresar",
-                              style: mystyle(30, Colors.white),
+                              style: mystyle(20, Colors.white),
                             ),
                           ),
                         ),

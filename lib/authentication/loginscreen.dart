@@ -82,8 +82,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       InkWell(
                         onTap: () {},
                         child: Container(
-                          width: MediaQuery.of(context).size.width / 2,
-                          height: 60,
+                          width: MediaQuery.of(context).size.width / 1.5,
+                          height: 50,
                           decoration: BoxDecoration(
                               gradient: LinearGradient(
                                   colors: GradientColors.riverCity),
@@ -91,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Center(
                             child: Text(
                               "Ingresar",
-                              style: mystyle(30, Colors.white),
+                              style: mystyle(20, Colors.white),
                             ),
                           ),
                         ),
