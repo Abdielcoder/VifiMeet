@@ -1,18 +1,66 @@
+import 'dart:io' show Platform;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gradient_colors/flutter_gradient_colors.dart';
+import 'package:jitsi_meet/jitsi_meet.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:vifi_meet/variables.dart';
 
 class JoinMeeting extends StatefulWidget {
   @override
   _JoinMeetingState createState() => _JoinMeetingState();
+  // TODO: implement createState
+
 }
 
 class _JoinMeetingState extends State<JoinMeeting> {
   TextEditingController namecontroller = TextEditingController();
+  TextEditingController roomcontroller = TextEditingController();
   bool isAudioMuted = true;
   bool isVideoMuted = true;
-  joinmeeting() {}
+  String username = '';
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getuserdata();
+  }
+
+  getuserdata() async {
+    DocumentSnapshot userdoc =
+        await usercollection.doc(FirebaseAuth.instance.currentUser?.uid).get();
+    setState(() {
+      username = userdoc.get('username') ?? '';
+    });
+  }
+
+  joinmeeting() async {
+    try {
+      bool isAndroid = Theme.of(context).platform == TargetPlatform.android;
+      bool isIos = Theme.of(context).platform == TargetPlatform.iOS;
+
+      Map<FeatureFlagEnum, bool> feautueflags = {
+        FeatureFlagEnum.WELCOME_PAGE_ENABLED: false
+      };
+      if (isAndroid) {
+        feautueflags[FeatureFlagEnum.CALL_INTEGRATION_ENABLED] == false;
+      } else if (isIos) {
+        feautueflags[FeatureFlagEnum.PIP_ENABLED] = false;
+      }
+      var options = JitsiMeetingOptions(room: roomcontroller.text)
+        ..userDisplayName =
+            namecontroller.text == '' ? username : namecontroller.text
+        ..audioMuted = isAudioMuted
+        ..videoMuted = isVideoMuted
+        ..featureFlags.addAll(feautueflags);
+      await JitsiMeet.joinMeeting(options);
+    } catch (e) {
+      print("ERROR $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +80,7 @@ class _JoinMeetingState extends State<JoinMeeting> {
                 height: 20,
               ),
               PinCodeTextField(
+                controller: roomcontroller,
                 appContext: context,
                 length: 6,
                 autoDisposeControllers: false,
@@ -115,5 +164,7 @@ class _JoinMeetingState extends State<JoinMeeting> {
         ),
       ),
     );
+    // TODO: implement build
+    throw UnimplementedError();
   }
 }
