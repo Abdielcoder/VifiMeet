@@ -19,8 +19,8 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.grey,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
-        selectedItemColor: Colors.blue,
-        selectedLabelStyle: mystyle(17, Colors.blue),
+        selectedItemColor: Colors.indigo[600],
+        selectedLabelStyle: mystyle(17, Colors.indigo[600]),
         unselectedItemColor: Colors.black,
         unselectedLabelStyle: mystyle(17, Colors.black),
         currentIndex: page,
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
               icon: Icon(Icons.video_call, size: 32), label: 'Video llamada'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person, size: 32), label: 'perfil'),
+              icon: Icon(Icons.person, size: 32), label: 'Perfil'),
         ],
       ),
       body: pageoptions[page],
